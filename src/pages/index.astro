@@ -9,7 +9,7 @@ const projects = await Astro.glob("./projects/*.md");
 
 <Layout title="Meral Lab - Web development & interface design studio">
   <main
-    class="mx-8 before:bg-[url('/bg-pattern-top.png')] before:w-[461px] before:h-[315px] before:absolute before:top-4 before:right-4 before:opacity-75"
+    class="mx-4 lg:mx-8 before:bg-cover before:bg-[url('/bg-pattern-top.png')] before:w-[240px] before:h-[165px] lg:before:w-[461px] lg:before:h-[315px] before:absolute before:top-4 before:right-4 before:opacity-75"
   >
     <div class="flex flex-col justify-between">
       <div class="my-6">
@@ -17,8 +17,8 @@ const projects = await Astro.glob("./projects/*.md");
           <Image src="/meral-lab-logo-white.png" width="48" height="48" />
         </a>
       </div>
-      <h1 class="text-lg font-bold text-7xl mt-20 mb-12">
-        Web development & <br /> interface design studio
+      <h1 class="font-bold text-4xl lg:text-7xl mt-20 mb-12 lg:max-w-5xl">
+        Web development & interface design studio
       </h1>
 
       <div>

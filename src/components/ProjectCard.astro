@@ -14,10 +14,10 @@ export interface Props {
 const { title, color, image, techs, url, service, subTitle } = Astro.props;
 ---
 
-<a target="_blank" href={url} class="block w-full md:w-[32rem] mr-6 mb-6">
+<a target="_blank" href={url} class="block w-full lg:w-[32rem] lg:mr-6 mb-6">
   <div
     style={`background-color:${color};background-image: url(${image})`}
-    class={`block w-full h-[22rem] rounded-md text-center p-8 transition hover:-translate-y-2 bg-contain bg-no-repeat bg-bottom mb-2`}
+    class={`block w-full h-[16rem] md:h-[22rem] rounded-md text-center p-8 transition hover:-translate-y-2 bg-contain bg-no-repeat bg-bottom mb-2`}
   >
     <h3 class="text-xl">
       {title}
