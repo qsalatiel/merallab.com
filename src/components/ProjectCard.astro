@@ -1,0 +1,45 @@
+---
+import { Image } from "@astrojs/image/components";
+
+export interface Props {
+  title: string;
+  subTitle: string;
+  service: string;
+  techs: string[];
+  image: string;
+  color: string;
+  url: string;
+}
+
+const { title, color, image, techs, url, service, subTitle } = Astro.props;
+---
+
+<a target="_blank" href={url} class="block w-full md:w-[32rem] mr-6 mb-6">
+  <div
+    style={`background-color:${color};background-image: url(${image})`}
+    class={`block w-full h-[22rem] rounded-md text-center p-8 transition hover:-translate-y-2 bg-contain bg-no-repeat bg-bottom mb-2`}
+  >
+    <h3 class="text-xl">
+      {title}
+    </h3>
+    <p class="font-mono text-xs text-white/80">{subTitle}</p>
+  </div>
+
+  <p class="font-mono text-xs text-white/80 px-6 text-center">
+    {service} with
+    {
+      techs.map((tech, index) => {
+        const isLast = index + 1 === techs.length;
+        const isOneToLast = index + 1 < techs.length - 1 && !isLast;
+
+        return (
+          <span>
+            {isLast && techs.length !== 1 ? "and" : ""}
+            <Image class="inline" src={`/${tech}.png`} height={16} width={16} />
+            {`${tech}${isOneToLast ? "," : ""}`}
+          </span>
+        );
+      })
+    }
+  </p>
+</a>

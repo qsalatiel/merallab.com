@@ -1,0 +1,51 @@
+---
+import { Image } from "@astrojs/image/components";
+
+import "@fontsource/plus-jakarta-sans";
+import "@fontsource/plus-jakarta-sans/700.css";
+import "@fontsource/roboto-mono/300.css";
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-slate-900 text-white pb-2 relative">
+    <slot />
+
+    <footer class="mx-8 mb-4 flex justify-end">
+      <p class="text-xs text-slate-300">
+        Made with <span class="mx-0.5" role="img" aria-label="Love">❤️</span> by
+        <a
+          href="https://salatielqueiroz.com"
+          class="inline-block transition ease border-dashed border-b border-transparent hover:-translate-y-0.5 hover:text-white hover:border-slate-400"
+          >Salatiel Queiroz</a
+        >
+        using
+        <a
+          href="https://astro.build"
+          target="_blank"
+          class="inline-block transition ease border-dashed hover:-translate-y-0.5 hover:text-white"
+        >
+          <Image
+            class="inline"
+            src="/astro-logo-dark.svg"
+            width={16}
+            height={16}
+          /> Astro</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>
